@@ -38,7 +38,7 @@ Welche Einheit soll umgerechnet werden C, K, F: beenden
 - Es werden keine zusätzlichen Bibliotheken benötigt.
 
 ## Autor
-Dieses Programm wurde von Bogdan erstellt.
+[![GitHub Badge](https://img.shields.io/badge/PixelPilot24-Profile-darkgreen?style=flat&logo=github)](https://github.com/PixelPilot24)
 
 ## Lizenz
 
