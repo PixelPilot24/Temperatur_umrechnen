@@ -1,22 +1,29 @@
-# TODO testen
+import math
+
+
 class Converter:
     @staticmethod
-    def kelvin_input(temperature):
-        celsius_var = temperature - 273.15
-        fahrenheit_var = temperature * (9 / 5) - 459.15
-        print(str(celsius_var) + " °C\n" + str(fahrenheit_var) + " °F")
+    def ceil_two_digit(num) -> str:
+        num = math.ceil(num * 100) / 100
+        return str(num)
 
-    @staticmethod
-    def celsius_input(temperature):
-        kelvin_var = temperature + 273.15
-        fahrenheit_var = temperature * (9 / 5) + 32
-        print(str(kelvin_var) + " °K\n" + str(fahrenheit_var) + " °F")
+    @classmethod
+    def kelvin_input(cls, temperature):
+        celsius_var = cls.ceil_two_digit(temperature - 273.15)
+        fahrenheit_var = cls.ceil_two_digit(temperature * 1.8 - 459.67)
+        print(celsius_var + " °C\n" + fahrenheit_var + " °F")
 
-    @staticmethod
-    def fahrenheit_input(temperature):
-        celsius_var = (temperature - 32) * (5 / 9)
-        kelvin_var = (temperature + 459.67) * (5 / 9)
-        print(str(celsius_var) + " °C\n" + str(kelvin_var) + " °K")
+    @classmethod
+    def celsius_input(cls, temperature):
+        kelvin_var = cls.ceil_two_digit(temperature + 273.15)
+        fahrenheit_var = cls.ceil_two_digit(temperature * 1.8 + 32)
+        print(kelvin_var + " °K\n" + fahrenheit_var + " °F")
+
+    @classmethod
+    def fahrenheit_input(cls, temperature):
+        celsius_var = cls.ceil_two_digit((temperature - 32) * (5 / 9))
+        kelvin_var = cls.ceil_two_digit((temperature + 459.67) * (5 / 9))
+        print(celsius_var + " °C\n" + kelvin_var + " °K")
 
     @classmethod
     def get_temp(cls):
